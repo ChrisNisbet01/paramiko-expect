@@ -103,7 +103,7 @@ class SSHClientInteraction(object):
 
     def expect(
         self, re_strings='', timeout=None, output_callback=None, default_match_prefix='.*\n',
-        strip_ansi=True, ignore_decode_error=True, lines_to_check=None
+        strip_ansi=True, ignore_decode_error=True, lines_to_check=None, leave_expected=False
     ):
         """
         This function takes in a regular expression (or regular expressions)
@@ -225,11 +225,12 @@ class SSHClientInteraction(object):
         # Clean the output up by removing the expect output from the end if
         # requested and save the details of the matched pattern
         if len(re_strings) != 0 and len(found_pattern) != 0:
-            self.current_output_clean = (
-                re.sub(
-                    found_pattern[0][1] + '$', '', self.current_output_clean
+            if not leave_expected:
+                self.current_output_clean = (
+                    re.sub(
+                        found_pattern[0][1] + '$', '', self.current_output_clean
+                    )
                 )
-            )
             self.last_match = found_pattern[0][1]
             return found_pattern[0][0]
         else:
