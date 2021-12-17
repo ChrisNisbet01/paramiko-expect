@@ -8,12 +8,12 @@ with open('README.rst') as f:
 
 setup(
     name='paramiko-expect',
-    version='0.3.2',
-    url='https://github.com/fgimian/paramiko-expect',
+    version='0.3.3',
+    url='https://github.com/ChrisNisbet01/paramiko-expect',
     license='MIT',
     author='Fotis Gimian',
     author_email='fgimiansoftware@gmail.com',
-    description='An expect-like extension for the Paramiko SSH library',
+    description='An expect-like extension for the Paramiko SSH library (Forked).',
     long_description=long_description,
     long_description_content_type='text/x-rst',
     platforms='Posix',
