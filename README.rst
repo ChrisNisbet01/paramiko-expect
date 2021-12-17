@@ -1,4 +1,4 @@
-Paramiko Expect
+Paramiko Expect (forked from https://github.com/fgimian/paramiko-expect)
 ===============
 
 .. image:: https://img.shields.io/pypi/l/paramiko-expect.svg
@@ -44,6 +44,9 @@ To install paramiko-expect, simply run the following at your prompt:
     pip install paramiko-expect
 
     # from source
+    pip install git+https://github.com/ChrisNisbet01/paramiko-expect
+
+    # Original source
     pip install git+https://github.com/fgimian/paramiko-expect.git
 
 So let's check out how it works in general (please see
